@@ -1,0 +1,35 @@
+#include<stdio.h>
+#include<conio.h>
+
+
+int main()
+{
+	int sayi1,sayi2;
+	int bol1, kal1;
+	int bol2, kal2;
+
+  for(sayi1=100;sayi1>=10;sayi1--)/*en büyük değeri aradığımızdan işleme girecek
+	  sayılar büyükten küçüge değerlendirilir.*/
+  {
+	  kal1=0;
+	  for(bol1=sayi1;bol1>=2;bol1--)
+		  if(sayi1%bol1==0)//mod alma işlemi ile asal sayılar tespit edilir.
+			  kal1++;
+	  if(kal1==1)
+	  {
+		  sayi2=sayi1-2;//sayinin 2 eksiği değerlendirilmek üzere sayı2 değişkenine aktarılır.
+		  kal2=0;
+		  for(bol2=sayi2;bol2>=2;bol2--)//mod alma işlemi için sölen arttırılır.
+			  if(sayi2%bol2==0)// mod un sonucu sıfır ise kalan arttırılır.
+				  kal2++;
+		  if (kal2==1)//kalan toplamı 1 ise her iki sayi da asaldır ve ekrana yazdırılır.
+		  {
+			printf("\nIki basamakli en buyuk ikiz asal sayilar sirasi ile= %d  %d", sayi2,sayi1);
+			break; //ekrana yazdırma işleminden sonra döngü sonlandırılır.
+		  }
+	  }
+  }
+  
+  _getch();
+  return 0;
+}
